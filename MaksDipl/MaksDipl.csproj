@@ -55,23 +55,23 @@
     </ApplicationDefinition>
     <Compile Include="Models\Element.cs" />
     <Compile Include="Services\BaseDataStore.cs" />
-    <Page Include="Controls\Connector1.xaml">
+    <Page Include="View\Connector1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Diod.xaml">
+    <Page Include="View\Diod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Knopka1.xaml">
+    <Page Include="View\Knopka1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Knopka2.xaml">
+    <Page Include="View\Knopka2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Knopka3.xaml">
+    <Page Include="View\Knopka3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,20 +83,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\Connector1.xaml.cs">
+    <Compile Include="View\Connector1.xaml.cs">
       <DependentUpon>Connector1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ControlInterface.cs" />
-    <Compile Include="Controls\Diod.xaml.cs">
+    <Compile Include="View\ControlInterface.cs" />
+    <Compile Include="View\Diod.xaml.cs">
       <DependentUpon>Diod.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Knopka1.xaml.cs">
+    <Compile Include="View\Knopka1.xaml.cs">
       <DependentUpon>Knopka1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Knopka2.xaml.cs">
+    <Compile Include="View\Knopka2.xaml.cs">
       <DependentUpon>Knopka2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Knopka3.xaml.cs">
+    <Compile Include="View\Knopka3.xaml.cs">
       <DependentUpon>Knopka3.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
