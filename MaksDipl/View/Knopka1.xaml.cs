@@ -12,14 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MaksDipl.Controls
+namespace MaksDipl.View
 {
     /// <summary>
     /// Логика взаимодействия для knopka1.xaml
     /// </summary>
-    public partial class knopka1 : UserControl,IControlInterface
+    public partial class Knopka1 : UserControl,IControlInterface
     {
-        public knopka1()
+        public Knopka1()
         {
             InitializeComponent();
         }

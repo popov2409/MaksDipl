@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace MaksDipl.Controls
+namespace MaksDipl.View
 {
     public interface IControlInterface
     {
