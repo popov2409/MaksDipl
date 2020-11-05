@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="20" d:DesignWidth="25" MouseDown="Base_MouseDown">
+             d:DesignHeight="20" d:DesignWidth="25" MouseDown="Base_MouseDown" MouseMove="Base_MouseMove">
     <UserControl.Resources>
         <SolidColorBrush x:Name="BaseColor" x:Key="BaseColor" Color="Black"/>
     </UserControl.Resources>

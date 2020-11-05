@@ -44,6 +44,16 @@ namespace MaksDipl.View
         private void Base_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Selected();
+            p2 = e.GetPosition(this);
+        }
+
+        private Point p2;
+        private void Base_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton != MouseButtonState.Pressed) return;
+            Point p1 = e.GetPosition(this.Parent as Canvas);
+            Point p = new Point(p1.X - p2.X, p1.Y - p2.Y);
+            this.Move(p);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +20,7 @@ namespace MaksDipl.View
     /// </summary>
     public partial class Knopka1 : UserControl,IControlInterface
     {
+        private Point p2;
         public Knopka1()
         {
             InitializeComponent();
@@ -42,6 +44,15 @@ namespace MaksDipl.View
         private void Base_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Selected();
+            p2 = e.GetPosition(this);
+        }
+
+        private void Base_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton != MouseButtonState.Pressed) return;
+            Point p1 = e.GetPosition(this.Parent as Canvas);
+            Point p = new Point(p1.X - p2.X, p1.Y - p2.Y);
+            this.Move(p);
         }
     }
 }

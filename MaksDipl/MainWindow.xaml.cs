@@ -42,5 +42,6 @@ namespace MaksDipl
             //BaseView.Width += dx;
             //BaseView.Height += dy;
         }
+        
     }
 }
