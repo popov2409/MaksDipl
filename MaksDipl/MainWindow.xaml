@@ -1,0 +1,24 @@
+﻿<Window x:Class="MaksDipl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaksDipl.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1080" WindowState="Maximized" PreviewMouseDown="MainWindow_OnPreviewMouseDown">
+    <Grid>
+        <ScrollViewer Name="ScrW" PreviewMouseWheel="Zoom_MouseWheel" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" >
+            <!--<Viewbox Name="BaseView"  Stretch="Uniform"  Width="700" Height="300" >-->
+                <Canvas Name="BaseCanvas" ClipToBounds="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <local:Connector1 HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,48,0,0"   />
+                    <local:Diod VerticalAlignment="Top" HorizontalAlignment="Left" Margin="26,28,0,0" RenderTransformOrigin="-3.019,0.111" />
+                    <local:knopka1 Margin="219,166,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-2.192,-1.731"/>
+                    <local:Knopka2 Margin="316,46,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <local:Knopka3 Margin="257,238,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.591,3.567"/>
+
+                </Canvas>
+            <!--</Viewbox>-->
+        </ScrollViewer>
+        
+    </Grid>
+</Window>
