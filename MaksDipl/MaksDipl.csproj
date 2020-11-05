@@ -53,23 +53,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\connector1.xaml">
+    <Compile Include="Models\Element.cs" />
+    <Compile Include="Services\BaseDataStore.cs" />
+    <Page Include="Controls\Connector1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\diod.xaml">
+    <Page Include="Controls\Diod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\knopka1.xaml">
+    <Page Include="Controls\Knopka1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\knopka2.xaml">
+    <Page Include="Controls\Knopka2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\knopka3.xaml">
+    <Page Include="Controls\Knopka3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,21 +83,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\connector1.xaml.cs">
-      <DependentUpon>connector1.xaml</DependentUpon>
+    <Compile Include="Controls\Connector1.xaml.cs">
+      <DependentUpon>Connector1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\ControlInterface.cs" />
-    <Compile Include="Controls\diod.xaml.cs">
-      <DependentUpon>diod.xaml</DependentUpon>
+    <Compile Include="Controls\Diod.xaml.cs">
+      <DependentUpon>Diod.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\knopka1.xaml.cs">
-      <DependentUpon>knopka1.xaml</DependentUpon>
+    <Compile Include="Controls\Knopka1.xaml.cs">
+      <DependentUpon>Knopka1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\knopka2.xaml.cs">
-      <DependentUpon>knopka2.xaml</DependentUpon>
+    <Compile Include="Controls\Knopka2.xaml.cs">
+      <DependentUpon>Knopka2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\knopka3.xaml.cs">
-      <DependentUpon>knopka3.xaml</DependentUpon>
+    <Compile Include="Controls\Knopka3.xaml.cs">
+      <DependentUpon>Knopka3.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -125,8 +127,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
