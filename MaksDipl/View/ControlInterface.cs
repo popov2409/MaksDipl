@@ -12,5 +12,6 @@ namespace MaksDipl.View
         void UnSelected();
         void Move(Point p);
         bool IsSelected { get; set; }
+        string Mark { get; set; }
     }
 }

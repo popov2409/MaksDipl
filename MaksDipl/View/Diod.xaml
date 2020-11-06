@@ -4,11 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="20" d:DesignWidth="20" PreviewMouseDown="Base_MouseDown" MouseMove="Base_MouseMove">
+             d:DesignHeight="40" d:DesignWidth="20" PreviewMouseDown="Base_MouseDown" MouseMove="Base_MouseMove">
     <UserControl.Resources>
         <SolidColorBrush x:Name="BaseColor" x:Key="BaseColor" Color="Black"/>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="NameTextBlock" Text="A12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource BaseColor}"/>
+        <Grid Row="1">
         <Polygon Stroke="{StaticResource BaseColor}">
             <Polygon.Points>
                 <Point X="1" Y="1"/>
@@ -19,5 +25,6 @@
         </Polygon>
         <Line X1="20" Y1="0" X2="20" Y2="20" Stroke="{StaticResource BaseColor}"/>
 
+        </Grid>
     </Grid>
 </UserControl>

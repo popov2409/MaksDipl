@@ -49,6 +49,12 @@ namespace MaksDipl.View
             p2 = e.GetPosition(this);
         }
 
+        public string Mark
+        {
+            get => NameTextBlock.Text;
+            set => NameTextBlock.Text = value;
+        }
+
         private Point p2;
         private void Base_MouseMove(object sender, MouseEventArgs e)
         {

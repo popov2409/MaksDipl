@@ -44,6 +44,12 @@ namespace MaksDipl.View
 
         public bool IsSelected { get; set; }
 
+        public string Mark
+        {
+            get => NameTextBlock.Text;
+            set => NameTextBlock.Text = value;
+        }
+
 
         private void Base_MouseDown(object sender, MouseButtonEventArgs e)
         {
