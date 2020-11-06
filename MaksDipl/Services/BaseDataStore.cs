@@ -7,6 +7,7 @@ namespace MaksDipl.Services
 {
     public class BaseDataStore
     {
+
     }
     
 }
