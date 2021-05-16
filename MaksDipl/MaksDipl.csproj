@@ -55,6 +55,10 @@
     </ApplicationDefinition>
     <Compile Include="Models\Element.cs" />
     <Compile Include="Services\BaseDataStore.cs" />
+    <Page Include="View\AddElementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Connector1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,6 +86,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\AddElementWindow.xaml.cs">
+      <DependentUpon>AddElementWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Connector1.xaml.cs">
       <DependentUpon>Connector1.xaml</DependentUpon>

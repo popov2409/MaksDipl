@@ -22,9 +22,12 @@ namespace MaksDipl.View
     public partial class Knopka1 : UserControl,IControlInterface
     {
         private Point p2;
-        public Knopka1()
+        public Knopka1(Element el)
         {
             InitializeComponent();
+            Element = el;
+            NameTextBlock.Text = Element.Mark;
+            this.Margin = new Thickness(el.Location.X, el.Location.Y, 0, 0);
         }
 
         public void Selected()
@@ -42,6 +45,7 @@ namespace MaksDipl.View
         public void Move(Point p)
         {
             this.Margin = new Thickness(p.X, p.Y, 0, 0);
+            Element.Location = p;
         }
 
         public bool IsSelected { get; set; }

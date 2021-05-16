@@ -7,12 +7,15 @@ using System.Windows.Controls;
 
 namespace MaksDipl.Models
 {
+   [Serializable]
    public class Element
    {
-       public Guid Id { get; set; }
-       public Point Location { get; set; }
-       public string Value { get; set; }
-       public int Rotate { get; set; }
-       public string ImageSource { get; set; }
+       public Guid Id { get; set; } //ИД элемента
+       public int ElementType { get; set; }//Тип, указаны в словаре в классе базы
+       public Point Location { get; set; }//Позиция
+       public string Mark { get; set; }//Маркировка
+       public string Purpose { get; set; }//Назначение
+       public int Rotate { get; set; }//Поворот, если допускается
+       public string ImageSource { get; set; }//Картинка, если имеется
    }
 }
