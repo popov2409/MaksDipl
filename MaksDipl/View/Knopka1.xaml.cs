@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaksDipl.Models;
+using MaksDipl.Services;
 
 namespace MaksDipl.View
 {
@@ -28,17 +29,20 @@ namespace MaksDipl.View
             Element = el;
             NameTextBlock.Text = Element.Mark;
             this.Margin = new Thickness(el.Location.X, el.Location.Y, 0, 0);
+            this.ToolTip = new BaseToolTip(Element);
         }
 
         public void Selected()
         {
-            ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Red;
+            this.Visibility = Visibility.Visible;
+            //((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Red;
             IsSelected = true;
         }
 
         public void UnSelected()
         {
-            ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
+            this.Visibility = Visibility.Hidden;
+           // ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
             IsSelected = false;
         }
 
@@ -70,6 +74,11 @@ namespace MaksDipl.View
             Point p1 = e.GetPosition(this.Parent as Canvas);
             Point p = new Point(p1.X - p2.X, p1.Y - p2.Y);
             this.Move(p);
+        }
+
+        private void DeleteElement_OnClick(object sender, RoutedEventArgs e)
+        {
+            BasePicture.RemoveElement(this);
         }
     }
 }

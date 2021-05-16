@@ -4,26 +4,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using System.Xml.Serialization;
 using MaksDipl.Models;
+using MaksDipl.View;
 
 namespace MaksDipl.Services
 {
 
-    public class BaseDataStore
+    public static class BaseDataStore
     {
         public const string DATA_PATH = "data\\db.xml";
-        public List<Element> Elements { get; set; }
+        public static List<Element> Elements { get; set; }
 
-        public Dictionary<int, string> ElementTypes { get; set; }
+        public static Dictionary<int, string> ElementTypes { get; set; }
 
-        public BaseDataStore()
-        {
-            LoadData();
-            CreateDictionary();
-        }
-
-        private void CreateDictionary()
+        private static void CreateDictionary()
         {
             ElementTypes = new Dictionary<int, string>();
             ElementTypes.Add(1,"Диод");
@@ -33,31 +29,32 @@ namespace MaksDipl.Services
 
         }
 
-        public void AddElement(Element el)
+        public static void AddElement(Element el)
         {
             Elements.Add(el);
             SaveData();
         }
 
-        public void RemoveElement(Element el)
+        public static void RemoveElement(Element el)
         {
             Elements.Remove(Elements.First(c => c.Id == el.Id));
             SaveData();
         }
 
-        public void SaveData()
+        public static void SaveData()
         {
 
             XmlSerializer formatter = new XmlSerializer(typeof(List<Element>));
 
-            using (FileStream fs = new FileStream(DATA_PATH, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(DATA_PATH, FileMode.Create))
             {
                 formatter.Serialize(fs, Elements);
             }
         }
 
-        public void LoadData()
+        public static void LoadData()
         {
+            CreateDictionary();
             Elements = new List<Element>();
             XmlSerializer formatter = new XmlSerializer(typeof(List<Element>));
 
@@ -76,6 +73,8 @@ namespace MaksDipl.Services
                 
             }
         }
+
+        
 
     }
     

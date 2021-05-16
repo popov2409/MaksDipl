@@ -11,17 +11,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Grid.Column="0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBox FontSize="16" Name="SearchTextBox" Background="#FFEBF0FC" TextChanged="SearchTextBox_TextChanged" Margin="1"/>
-            <Button Grid.Column="1" Width="80" Content="Поиск" Margin="1"/>
+            <Button Name="ClearSearchButton" Grid.Column="1" Width="80" Content="Очистить" Margin="1" Click="ClearSearchButton_OnClick"/>
         </Grid>
         
         <ScrollViewer Grid.Row="1" Grid.Column="0" Name="ScrW" PreviewMouseWheel="Zoom_MouseWheel" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="1080" Height="760" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">
@@ -29,7 +25,9 @@
                 <Canvas Name="BaseCanvas" ClipToBounds="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PreviewMouseDown="BaseCanvas_PreviewMouseDown" >
                 <Canvas.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="Добавить элемент" Name="AddElementMenuItem" Click="AddElementMenuItem_OnClick"></MenuItem>
+                        <MenuItem Header="Добавить элемент" Name="AddElementMenuItem" Click="AddElementMenuItem_OnClick"/>
+                        <MenuItem Header="Скрыть фон" Name="HidePicture" Click="HidePicture_OnClick"/>
+                        <MenuItem Header="Показать все элементы" Name="ShowAllElements" Click="ShowAllElements_OnClick"></MenuItem>
                     </ContextMenu>
                 </Canvas.ContextMenu>
                     <Canvas.Background>

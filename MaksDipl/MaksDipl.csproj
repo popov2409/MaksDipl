@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\BaseToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Connector1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,8 +91,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\BasePicture.cs" />
     <Compile Include="View\AddElementWindow.xaml.cs">
       <DependentUpon>AddElementWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BaseToolTip.xaml.cs">
+      <DependentUpon>BaseToolTip.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Connector1.xaml.cs">
       <DependentUpon>Connector1.xaml</DependentUpon>

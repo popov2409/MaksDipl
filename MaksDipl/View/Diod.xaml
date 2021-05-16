@@ -8,12 +8,18 @@
     <UserControl.Resources>
         <SolidColorBrush x:Name="BaseColor" x:Key="BaseColor" Color="Black"/>
     </UserControl.Resources>
+    <UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Name="DeleteElement" Header="Удалить" Click="DeleteElement_OnClick"/>
+        </ContextMenu>
+    </UserControl.ContextMenu>
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="NameTextBlock" Text="A12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource BaseColor}"/>
+        <Rectangle Grid.RowSpan="2" Stroke="Red" Fill="Yellow"/>
+        <TextBlock Grid.Row="0" Name="NameTextBlock" Text="A12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource BaseColor}" Visibility="Visible"/>
         <Grid Row="1">
         <Polygon Stroke="{StaticResource BaseColor}">
             <Polygon.Points>

@@ -22,14 +22,13 @@ namespace MaksDipl.View
     /// </summary>
     public partial class AddElementWindow : Window
     {
-        private BaseDataStore dbStore;
         private Point locate;
-        public AddElementWindow(BaseDataStore dbProxy,Point loc)
+        private Element element;
+        public AddElementWindow()
         {
             InitializeComponent();
-            dbStore = dbProxy;
-            locate = loc;
-            ElementTypeCombobox.ItemsSource = dbProxy.ElementTypes;
+            
+            ElementTypeCombobox.ItemsSource = BaseDataStore.ElementTypes;
         }
 
         private void SaveButton_OnClick(object sender, RoutedEventArgs e)
@@ -47,7 +46,8 @@ namespace MaksDipl.View
                 Id = Guid.NewGuid(), ElementType = elT, Mark = MarkTextBox.Text, ImageSource = _photoPath,
                 Location = locate,Purpose = PurposeTextBox.Text
             };
-            dbStore.AddElement(el);
+            BaseDataStore.AddElement(el);
+            element = el;
             this.Close();
         }
 
@@ -62,6 +62,13 @@ namespace MaksDipl.View
                 ElementPictureImage.Source = new BitmapImage(new Uri(new Uri("file://"),
                     AppDomain.CurrentDomain.BaseDirectory + "images/" + _photoPath));
             }
+        }
+
+        public Element NewElement(Point locPoint)
+        {
+            locate = locPoint;
+            this.ShowDialog();
+            return element;
         }
     }
 }
