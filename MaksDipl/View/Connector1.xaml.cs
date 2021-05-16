@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaksDipl.Models;
 
 namespace MaksDipl.View
 {
@@ -49,6 +50,8 @@ namespace MaksDipl.View
             get => NameTextBlock.Text;
             set => NameTextBlock.Text = value;
         }
+
+        public Element Element { get; set; }
 
 
         private void Base_MouseDown(object sender, MouseButtonEventArgs e)

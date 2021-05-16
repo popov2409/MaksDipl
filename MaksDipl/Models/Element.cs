@@ -13,7 +13,6 @@ namespace MaksDipl.Models
        public Point Location { get; set; }
        public string Value { get; set; }
        public int Rotate { get; set; }
-       public UserControl UserControl { get; set; }
        public string ImageSource { get; set; }
    }
 }
