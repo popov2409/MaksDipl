@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaksDipl.Models;
+using MaksDipl.Services;
 
 namespace MaksDipl.View
 {
@@ -20,27 +21,34 @@ namespace MaksDipl.View
     /// </summary>
     public partial class Connector1 : UserControl,IControlInterface
     {
-        public Connector1()
+        public Connector1(Element el)
         {
             InitializeComponent();
-            
+            Element = el;
+            NameTextBlock.Text = Element.Mark;
+            this.Margin = new Thickness(el.Location.X, el.Location.Y, 0, 0);
+            this.ToolTip = new BaseToolTip(Element);
+
         }
 
         public void Selected()
         {
-            ((SolidColorBrush) this.Resources["BaseColor"]).Color = Colors.Red;
+            this.Visibility = Visibility.Visible;
+            // ((SolidColorBrush) this.Resources["BaseColor"]).Color = Colors.Red;
             IsSelected = true;
         }
 
         public void UnSelected()
         {
-            ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
+            this.Visibility = Visibility.Hidden;
+            //((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
             IsSelected = false;
         }
 
         public void Move(Point p)
         {
             this.Margin = new Thickness(p.X, p.Y, 0, 0);
+            Element.Location = p;
         }
 
         public bool IsSelected { get; set; }
@@ -67,6 +75,11 @@ namespace MaksDipl.View
             Point p1 = e.GetPosition(this.Parent as Canvas);
             Point p = new Point(p1.X - p2.X, p1.Y - p2.Y);
             this.Move(p);
+        }
+
+        private void DeleteElement_OnClick(object sender, RoutedEventArgs e)
+        {
+            BasePicture.RemoveElement(this);
         }
     }
 }

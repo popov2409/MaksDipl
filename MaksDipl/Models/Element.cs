@@ -7,6 +7,9 @@ using System.Windows.Controls;
 
 namespace MaksDipl.Models
 {
+    /// <summary>
+    /// Элемент на схеме для хранения в базе
+    /// </summary>
    [Serializable]
    public class Element
    {

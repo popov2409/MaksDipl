@@ -17,6 +17,7 @@ namespace MaksDipl.View
 {
     /// <summary>
     /// Логика взаимодействия для BaseToolTip.xaml
+    /// Шаблон всплывающей подсказки для элемента
     /// </summary>
     public partial class BaseToolTip : UserControl
     {
