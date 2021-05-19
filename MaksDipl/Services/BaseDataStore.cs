@@ -40,7 +40,6 @@ namespace MaksDipl.Services
             ElementTypes.Add(3, "Кнопка2");
             ElementTypes.Add(4, "Кнопка3");
             ElementTypes.Add(5, "Штекер");
-
         }
         /// <summary>
         /// Добавить элемент в базу
@@ -96,9 +95,8 @@ namespace MaksDipl.Services
 
                 
             }
-        }
 
-        
+        }
 
     }
     

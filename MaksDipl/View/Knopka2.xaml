@@ -19,8 +19,25 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Rectangle Grid.RowSpan="2" Stroke="Red" Fill="Yellow"/>
-        <TextBlock Grid.Row="0" Name="NameTextBlock" Text="A12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource BaseColor}" Visibility="Visible"/>
-        <Grid Row="1">
+        <TextBlock Grid.Row="0" Name="NameTextBlock" Text="A12" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource BaseColor}" Visibility="Visible" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Grid Row="1" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="0.8" ScaleX="0.8"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
             <Line X1="0" X2="25" Y1="20" Y2="10" Stroke="{StaticResource BaseColor}"/>
             <Line Y1="3" Y2="20" Stroke="{StaticResource BaseColor}"/>
             <Line X1="0.5" X2="4" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource BaseColor}" Margin="21,3,0,0"/>
