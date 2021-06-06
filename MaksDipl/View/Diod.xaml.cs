@@ -29,6 +29,7 @@ namespace MaksDipl.View
             NameTextBlock.Text = Element.Mark;
             this.Margin = new Thickness(el.Location.X, el.Location.Y, 0, 0);
             this.ToolTip=new BaseToolTip(Element);
+            Rotate(el.Rotate);
         }
 
 

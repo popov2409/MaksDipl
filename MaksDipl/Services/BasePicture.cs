@@ -46,45 +46,56 @@ namespace MaksDipl.Services
         private static void PictureElement(Element el)
         {
             if (el == null) return;
+            MainCanvas.Children.Add(GetControlElement(el));
+        }
+
+
+        public static UserControl GetControlElement(Element el)
+        {
+            
             switch (el.ElementType)
             {
                 case 1:
                 {
-                    Diod d = new Diod(el);
-                    d.Rotate(el.Rotate);
-                    MainCanvas.Children.Add(d);
-                    break;
+                    return new Diod(el);
                 }
                 case 2:
                 {
-                    Knopka1 d = new Knopka1(el);
-                    d.Rotate(el.Rotate);
-                    MainCanvas.Children.Add(d);
-                    break;
-                }
+                    return new Knopka1(el); ;
+                    }
                 case 3:
                 {
-                    Knopka2 d = new Knopka2(el);
-                    d.Rotate(el.Rotate);
-                    MainCanvas.Children.Add(d);
-                    break;
-                }
+                    return new Knopka2(el);
+                    }
                 case 4:
                 {
-                    Knopka3 d = new Knopka3(el);
-                    d.Rotate(el.Rotate);
-                    MainCanvas.Children.Add(d);
-                    break;
-                }
+                    return new Knopka3(el);
+                    }
                 case 5:
                 {
-                    Connector1 d = new Connector1(el);
-                    d.Rotate(el.Rotate);
-                    MainCanvas.Children.Add(d);
-                    break;
+                    return new Knopka4(el);
+                }
+                case 6:
+                {
+                    return new Connector1(el);
+                    }
+                case 7:
+                {
+                    return new Connector2(el);
+                }
+                case 8:
+                {
+                    return new Rele1(el);
+                }
+                case 9:
+                {
+                    return new Rele2(el);
                 }
             }
+
+            return null;
         }
+
 
         /// <summary>
         /// Отрисовка всех объектов на канвасе при загрузке программы

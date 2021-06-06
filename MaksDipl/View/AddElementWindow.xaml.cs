@@ -73,42 +73,15 @@ namespace MaksDipl.View
 
         private void ElementTypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            RotateComboBox.SelectedIndex = 0;
             if (ElementTypeCombobox.SelectedIndex < 0)
             {
-                RotateComboBox.SelectedIndex = 0;
                 RotateComboBox.IsEnabled = false;
                 return;
             }
             ElCanvas.Children.Clear();
-            switch (ElementTypeCombobox.SelectedIndex)
-            {
-                case 0:
-                {
-                    ElCanvas.Children.Add(new Diod(new Element() {Mark = "Д", Location = new Point(5, 5)}));
-                    break;
-                }
-                case 1:
-                {
-                    ElCanvas.Children.Add(new Knopka1(new Element() { Mark = "В", Location = new Point(5, 5) }));
-                    break;
-                }
-                case 2:
-                {
-                    ElCanvas.Children.Add(new Knopka2(new Element() { Mark = "В", Location = new Point(5, 5) }));
-                    break;
-                }
-                case 3:
-                {
-                    ElCanvas.Children.Add(new Knopka3(new Element() { Mark = "Р", Location = new Point(5, 5) }));
-                    break;
-                }
-                case 4:
-                {
-                    ElCanvas.Children.Add(new Connector1(new Element() { Mark = "Ш", Location = new Point(5, 5) }));
-                    break;
-                }
-            }
-
+            Element el=new Element(){ElementType = ElementTypeCombobox.SelectedIndex+1};
+            ElCanvas.Children.Add(BasePicture.GetControlElement(el));
             RotateComboBox.IsEnabled = true;
         }
 

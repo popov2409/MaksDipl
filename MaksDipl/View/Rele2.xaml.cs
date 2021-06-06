@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,19 +17,17 @@ using MaksDipl.Services;
 namespace MaksDipl.View
 {
     /// <summary>
-    /// Логика взаимодействия для knopka1.xaml
+    /// Логика взаимодействия для Rele2.xaml
     /// </summary>
-    public partial class Knopka1 : UserControl,IControlInterface
+    public partial class Rele2 : UserControl,IControlInterface
     {
-        private Point p2;
-        public Knopka1(Element el)
+        public Rele2(Element el)
         {
             InitializeComponent();
             Element = el;
             NameTextBlock.Text = Element.Mark;
             this.Margin = new Thickness(el.Location.X, el.Location.Y, 0, 0);
             this.ToolTip = new BaseToolTip(Element);
-            Rotate(el.Rotate);
         }
 
         public void Selected()
@@ -43,7 +40,7 @@ namespace MaksDipl.View
         public void UnSelected()
         {
             this.Visibility = Visibility.Hidden;
-           // ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
+            // ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
             IsSelected = false;
         }
 
@@ -53,18 +50,21 @@ namespace MaksDipl.View
             Element.Location = p;
         }
 
+        private Point p2;
+
         public void Rotate(double angle)
         {
-            try
-            {
-                ((TransformGroup)PictureGrid.RenderTransform).Children[2] = new RotateTransform(angle);
-                Element.Rotate = angle;
+            return;
+            //try
+            //{
+            //    ((TransformGroup)PictureGrid.RenderTransform).Children[2] = new RotateTransform(angle);
+            //    Element.Rotate = angle;
 
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
         }
 
         public bool IsSelected { get; set; }

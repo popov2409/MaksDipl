@@ -55,6 +55,15 @@
     </ApplicationDefinition>
     <Compile Include="Models\Element.cs" />
     <Compile Include="Services\BaseDataStore.cs" />
+    <Compile Include="View\Knopka4.xaml.cs">
+      <DependentUpon>Knopka4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Rele1.xaml.cs">
+      <DependentUpon>Rele1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Rele2.xaml.cs">
+      <DependentUpon>Rele2.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AddElementWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -64,6 +73,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Connector1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Connector2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,6 +114,9 @@
     <Compile Include="View\Connector1.xaml.cs">
       <DependentUpon>Connector1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Connector2.xaml.cs">
+      <DependentUpon>Connector2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ControlInterface.cs" />
     <Compile Include="View\Diod.xaml.cs">
       <DependentUpon>Diod.xaml</DependentUpon>
@@ -118,6 +134,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Knopka4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Rele1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Rele2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

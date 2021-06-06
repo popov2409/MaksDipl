@@ -13,7 +13,7 @@
             <MenuItem Name="DeleteElement" Header="Удалить" Click="DeleteElement_OnClick"/>
         </ContextMenu>
     </UserControl.ContextMenu>
-    <Grid Background="Transparent" Name="PictureGrid">
+    <Grid Background="Transparent" >
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
@@ -29,7 +29,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Grid Row="1" RenderTransformOrigin="0.5,0.5">
+        <Grid Row="1" RenderTransformOrigin="0.5,0.5" Name="PictureGrid">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="0.8" ScaleX="0.8"/>

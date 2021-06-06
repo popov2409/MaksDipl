@@ -28,6 +28,7 @@ namespace MaksDipl.View
             NameTextBlock.Text = Element.Mark;
             this.Margin = new Thickness(Element.Location.X, Element.Location.Y, 0, 0);
             this.ToolTip = new BaseToolTip(Element);
+            Rotate(el.Rotate);
         }
 
         private void Base_MouseDown(object sender, MouseButtonEventArgs e)

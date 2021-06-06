@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,12 +17,11 @@ using MaksDipl.Services;
 namespace MaksDipl.View
 {
     /// <summary>
-    /// Логика взаимодействия для knopka1.xaml
+    /// Логика взаимодействия для Connector2.xaml
     /// </summary>
-    public partial class Knopka1 : UserControl,IControlInterface
+    public partial class Connector2 : UserControl,IControlInterface
     {
-        private Point p2;
-        public Knopka1(Element el)
+        public Connector2(Element el)
         {
             InitializeComponent();
             Element = el;
@@ -31,19 +29,20 @@ namespace MaksDipl.View
             this.Margin = new Thickness(el.Location.X, el.Location.Y, 0, 0);
             this.ToolTip = new BaseToolTip(Element);
             Rotate(el.Rotate);
+
         }
 
         public void Selected()
         {
             this.Visibility = Visibility.Visible;
-            //((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Red;
+            // ((SolidColorBrush) this.Resources["BaseColor"]).Color = Colors.Red;
             IsSelected = true;
         }
 
         public void UnSelected()
         {
             this.Visibility = Visibility.Hidden;
-           // ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
+            //((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
             IsSelected = false;
         }
 
@@ -55,16 +54,8 @@ namespace MaksDipl.View
 
         public void Rotate(double angle)
         {
-            try
-            {
-                ((TransformGroup)PictureGrid.RenderTransform).Children[2] = new RotateTransform(angle);
-                Element.Rotate = angle;
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            ((TransformGroup)PictureGrid.RenderTransform).Children[2] = new RotateTransform(angle);
+            Element.Rotate = angle;
         }
 
         public bool IsSelected { get; set; }
@@ -77,12 +68,14 @@ namespace MaksDipl.View
 
         public Element Element { get; set; }
 
+
         private void Base_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Selected();
             p2 = e.GetPosition(this);
         }
 
+        private Point p2;
         private void Base_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton != MouseButtonState.Pressed || !IsSelected) return;

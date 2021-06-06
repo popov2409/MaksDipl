@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,12 +17,11 @@ using MaksDipl.Services;
 namespace MaksDipl.View
 {
     /// <summary>
-    /// Логика взаимодействия для knopka1.xaml
+    /// Логика взаимодействия для Knopka4.xaml
     /// </summary>
-    public partial class Knopka1 : UserControl,IControlInterface
+    public partial class Knopka4 : UserControl,IControlInterface
     {
-        private Point p2;
-        public Knopka1(Element el)
+        public Knopka4(Element el)
         {
             InitializeComponent();
             Element = el;
@@ -43,7 +41,7 @@ namespace MaksDipl.View
         public void UnSelected()
         {
             this.Visibility = Visibility.Hidden;
-           // ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
+            // ((SolidColorBrush)this.Resources["BaseColor"]).Color = Colors.Black;
             IsSelected = false;
         }
 
@@ -52,6 +50,8 @@ namespace MaksDipl.View
             this.Margin = new Thickness(p.X, p.Y, 0, 0);
             Element.Location = p;
         }
+
+        private Point p2;
 
         public void Rotate(double angle)
         {
