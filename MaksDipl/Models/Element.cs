@@ -18,7 +18,7 @@ namespace MaksDipl.Models
        public Point Location { get; set; }//Позиция
        public string Mark { get; set; }//Маркировка
        public string Purpose { get; set; }//Назначение
-       public int Rotate { get; set; }//Поворот, если допускается
+       public double Rotate { get; set; }//Поворот, если допускается
        public string ImageSource { get; set; }//Картинка, если имеется
    }
 }

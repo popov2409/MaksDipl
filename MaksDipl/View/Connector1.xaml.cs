@@ -51,6 +51,12 @@ namespace MaksDipl.View
             Element.Location = p;
         }
 
+        public void Rotate(double angle)
+        {
+            ((TransformGroup)PictureGrid.RenderTransform).Children[2] = new RotateTransform(angle);
+            Element.Rotate = angle;
+        }
+
         public bool IsSelected { get; set; }
 
         public string Mark

@@ -19,7 +19,7 @@ namespace MaksDipl.Services
         /// <summary>
         /// Путь к файлу с данными
         /// </summary>
-        public const string DATA_PATH = "data\\db.xml";
+        public const string DATA_FOLDER_PATH = "data\\";
         /// <summary>
         /// Список всех элементов
         /// </summary>
@@ -30,16 +30,19 @@ namespace MaksDipl.Services
         public static Dictionary<int, string> ElementTypes { get; set; }
 
         /// <summary>
-        /// Создание спика типов элементов
+        /// Создание списка типов элементов
         /// </summary>
         private static void CreateDictionary()
         {
+
+            int i = 0;
             ElementTypes = new Dictionary<int, string>();
-            ElementTypes.Add(1,"Диод");
-            ElementTypes.Add(2, "Кнопка1");
-            ElementTypes.Add(3, "Кнопка2");
-            ElementTypes.Add(4, "Кнопка3");
-            ElementTypes.Add(5, "Штекер");
+            StreamReader sr = new StreamReader(DATA_FOLDER_PATH + "elements.txt");
+            while (!sr.EndOfStream)
+            {
+                i++;
+                ElementTypes.Add(i, sr.ReadLine());
+            }
         }
         /// <summary>
         /// Добавить элемент в базу
@@ -67,7 +70,7 @@ namespace MaksDipl.Services
 
             XmlSerializer formatter = new XmlSerializer(typeof(List<Element>));
 
-            using (FileStream fs = new FileStream(DATA_PATH, FileMode.Create))
+            using (FileStream fs = new FileStream(DATA_FOLDER_PATH+"db.xml", FileMode.Create))
             {
                 formatter.Serialize(fs, Elements);
             }
@@ -81,7 +84,7 @@ namespace MaksDipl.Services
             Elements = new List<Element>();
             XmlSerializer formatter = new XmlSerializer(typeof(List<Element>));
 
-            using (FileStream fs = new FileStream(DATA_PATH, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(DATA_FOLDER_PATH+"db.xml", FileMode.OpenOrCreate))
             {
                 try
                 {

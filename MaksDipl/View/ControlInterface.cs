@@ -21,10 +21,20 @@ namespace MaksDipl.View
         /// </summary>
         void UnSelected();
         void Move(Point p);
+
+        /// <summary>
+        /// Поворот
+        /// </summary>
+        /// <param name="angle"></param>
+        void Rotate(double angle);
+
+
         bool IsSelected { get; set; }
         /// <summary>
         /// Елемент
         /// </summary>
         Element Element { get; set; }
+
+
     }
 }

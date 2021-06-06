@@ -44,7 +44,7 @@ namespace MaksDipl.View
             Element el = new Element()
             {
                 Id = Guid.NewGuid(), ElementType = elT, Mark = MarkTextBox.Text, ImageSource = _photoPath,
-                Location = locate,Purpose = PurposeTextBox.Text
+                Location = locate,Purpose = PurposeTextBox.Text,Rotate = RotateComboBox.SelectedIndex*90
             };
             BaseDataStore.AddElement(el);
             element = el;
@@ -69,6 +69,54 @@ namespace MaksDipl.View
             locate = locPoint;
             this.ShowDialog();
             return element;
+        }
+
+        private void ElementTypeCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ElementTypeCombobox.SelectedIndex < 0)
+            {
+                RotateComboBox.SelectedIndex = 0;
+                RotateComboBox.IsEnabled = false;
+                return;
+            }
+            ElCanvas.Children.Clear();
+            switch (ElementTypeCombobox.SelectedIndex)
+            {
+                case 0:
+                {
+                    ElCanvas.Children.Add(new Diod(new Element() {Mark = "Д", Location = new Point(5, 5)}));
+                    break;
+                }
+                case 1:
+                {
+                    ElCanvas.Children.Add(new Knopka1(new Element() { Mark = "В", Location = new Point(5, 5) }));
+                    break;
+                }
+                case 2:
+                {
+                    ElCanvas.Children.Add(new Knopka2(new Element() { Mark = "В", Location = new Point(5, 5) }));
+                    break;
+                }
+                case 3:
+                {
+                    ElCanvas.Children.Add(new Knopka3(new Element() { Mark = "Р", Location = new Point(5, 5) }));
+                    break;
+                }
+                case 4:
+                {
+                    ElCanvas.Children.Add(new Connector1(new Element() { Mark = "Ш", Location = new Point(5, 5) }));
+                    break;
+                }
+            }
+
+            RotateComboBox.IsEnabled = true;
+        }
+
+        private void RotateComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ElCanvas.Children.Count==0) return;
+            int k = RotateComboBox.SelectedIndex;
+            (ElCanvas.Children[0] as IControlInterface)?.Rotate(RotateComboBox.SelectedIndex*90);
         }
     }
 }

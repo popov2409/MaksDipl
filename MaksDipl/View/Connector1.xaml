@@ -29,7 +29,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Grid Row="1" RenderTransformOrigin="0.5,0.5">
+        <Grid Row="1" RenderTransformOrigin="0.5,0.5" Name="PictureGrid">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>

@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MaksDipl.View"
         mc:Ignorable="d"
-        Title="Добавить новый элемент" Height="450" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" FontSize="16">
+        Title="Добавить новый элемент" Height="550" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" FontSize="16">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -19,19 +20,36 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Тип элемента" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" Text="Тип элемента" DisplayMemberPath="Value" Name="ElementTypeCombobox" Margin="1"/>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Grid.Column="0"  Text="Тип элемента" DisplayMemberPath="Value" Name="ElementTypeCombobox"  VerticalAlignment="Center"  Margin="1" SelectionChanged="ElementTypeCombobox_SelectionChanged" />
+            <Canvas Grid.Column="1" Name="ElCanvas"/>
+        </Grid>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Маркировка" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Name="MarkTextBox" Margin="1"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Поворот" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0"/>
+        <ComboBox Name="RotateComboBox" Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="100" HorizontalAlignment="Left" SelectionChanged="RotateComboBox_SelectionChanged" IsEnabled="False">
+            <ComboBox.Items>
+                <TextBlock Text="0"/>
+                <TextBlock Text="90"/>
+                <TextBlock Text="180"/>
+                <TextBlock Text="270"/>
+            </ComboBox.Items>
+        </ComboBox>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Назначение" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Маркировка" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="MarkTextBox" Margin="1"/>
 
-        <StackPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0">
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Назначение" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,10,0">
             <TextBlock  Text="Фото" />
             <Button Content="Загрузить..." Name="LoadFotoButton" Click="LoadFotoButton_OnClick"></Button>
         </StackPanel>
-        <Image Grid.Column="1" Grid.Row="3" Margin="1" Name="ElementPictureImage"></Image>
-        <TextBox Name="PurposeTextBox" Grid.Row="2" Grid.Column="1" MinHeight="80" TextWrapping="Wrap" AcceptsReturn="True" ></TextBox>
-        <Button Name="SaveButton" Grid.ColumnSpan="2" Grid.Column="0" Margin="1" Grid.Row="4" Content="Сохранить" FontSize="16" Height="40" Click="SaveButton_OnClick"/>
+        <Image Grid.Column="1" Grid.Row="4" Margin="1" Name="ElementPictureImage"></Image>
+        <TextBox Name="PurposeTextBox" Grid.Row="3" Grid.Column="1" MinHeight="80" TextWrapping="Wrap" AcceptsReturn="True" ></TextBox>
+        <Button Name="SaveButton" Grid.ColumnSpan="2" Grid.Column="0" Margin="1" Grid.Row="5" Content="Сохранить" FontSize="16" Height="40" Click="SaveButton_OnClick"/>
     </Grid>
 </Window>

@@ -26,7 +26,7 @@ namespace MaksDipl.View
             InitializeComponent();
             MarkTextBlock.Text = el.Mark;
             PurposeTextBox.Text = el.Purpose;
-            if(el.ImageSource.Length<1)return;
+            if(el.ImageSource==null || !el.ImageSource.Any())return;
             ElementPictureImage.Source = new BitmapImage(new Uri(new Uri("file://"),
                 AppDomain.CurrentDomain.BaseDirectory + "images/" + el.ImageSource));
         }

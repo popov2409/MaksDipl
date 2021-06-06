@@ -45,35 +45,41 @@ namespace MaksDipl.Services
         /// <param name="el"></param>
         private static void PictureElement(Element el)
         {
+            if (el == null) return;
             switch (el.ElementType)
             {
                 case 1:
                 {
                     Diod d = new Diod(el);
+                    d.Rotate(el.Rotate);
                     MainCanvas.Children.Add(d);
                     break;
                 }
                 case 2:
                 {
                     Knopka1 d = new Knopka1(el);
+                    d.Rotate(el.Rotate);
                     MainCanvas.Children.Add(d);
                     break;
                 }
                 case 3:
                 {
                     Knopka2 d = new Knopka2(el);
+                    d.Rotate(el.Rotate);
                     MainCanvas.Children.Add(d);
                     break;
                 }
                 case 4:
                 {
                     Knopka3 d = new Knopka3(el);
+                    d.Rotate(el.Rotate);
                     MainCanvas.Children.Add(d);
                     break;
                 }
                 case 5:
                 {
                     Connector1 d = new Connector1(el);
+                    d.Rotate(el.Rotate);
                     MainCanvas.Children.Add(d);
                     break;
                 }

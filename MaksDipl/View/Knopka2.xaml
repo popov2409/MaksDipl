@@ -13,7 +13,7 @@
             <MenuItem Name="DeleteElement" Header="Удалить" Click="DeleteElement_OnClick"/>
         </ContextMenu>
     </UserControl.ContextMenu>
-    <Grid Background="Transparent">
+    <Grid Background="Transparent" Name="PictureGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
